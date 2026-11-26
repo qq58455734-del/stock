@@ -80,11 +80,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helv
 
 <input type="date" id="txDate" class="border border-slate-200 rounded-2xl p-3 bg-slate-50 font-medium text-slate-700 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none transition">
 
-<select id="txType" class="border border-slate-200 rounded-2xl p-3 bg-slate-50 font-bold text-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none transition">
+<select id="txType" onchange="updateTxTypeColor(this)" class="border border-slate-200 rounded-2xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+  
+<option value="BUY" class="text-rose-600 font-bold">買進 (Buy)</option>
 
-<option value="BUY">買進 (Buy)</option>
-
-<option value="SELL">賣出 (Sell)</option>
+<option value="SELL" class="text-emerald-600 font-bold">賣出 (Sell)</option>
 
 </select>
 
@@ -1686,23 +1686,13 @@ renderAll();
 
 initAutoUpdate();
 
+function updateTxTypeColor(selectEl) { if (selectEl.value === 'BUY') { selectEl.className = 'focus:ring-2 focus:ring-indigo-500 border border-slate-200 rounded-2xl p-3 bg-slate-50 font-bold text-rose-600'; } else { selectEl.className = 'focus:ring-2 focus:ring-indigo-500 border border-slate-200 rounded-2xl p-3 bg-slate-50 font-bold text-emerald-600'; } }
+
+updateTxTypeColor(document.getElementById('txType'))
+
 </script>
 
 </body>
 
 </html>
-
-從我的iPhone傳送
-
-
-
-> Peter Cheng <qq58455734@gmail.com> 於 2026年11月23日 21:38 寫道：
-
->
-
-> ﻿
-
->
-
-> <google.html>
 
